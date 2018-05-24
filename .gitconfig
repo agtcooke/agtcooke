@@ -1,0 +1,81 @@
+[user]
+	email = a.cooke@techsmith.com
+	name = Tony Cooke
+[push]
+	default = simple
+
+[diff]
+   tool = bcomp
+[difftool]
+   prompt = false
+[difftool "bcomp"]
+   #use cygpath to transform cygwin path $LOCAL (something like /tmp/U5VvP1_abc) to windows path, because bcomp is a windows software
+   cmd = \"c:/program files/beyond compare 4/bcomp.exe\" \"$(cygpath -w $LOCAL)\" \"$REMOTE\"
+[merge]
+   tool = bcomp
+[mergetool "bcomp"]
+   trustExitCode = true
+   cmd = \"c:/program files/beyond compare 4/bcomp.exe\" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+[core]
+	autocrlf = true
+   #editor = 'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin "$(cygpath -w "$*")"
+   editor = 'C:/Program Files/Microsoft VS Code/Code.exe' --new-window --wait "$(cygpath -w "$*")"
+	trustctime = false
+	filemode = false
+
+[color]
+   branch = auto
+   diff = auto
+   status = auto
+   ui = auto
+[color "branch"]
+   current = yellow reverse
+   local = yellow 
+   remote = green
+[color "diff"]
+   meta = yellow bold
+   frag = magenta bold
+   old = red bold
+   new = green bold
+[color "status"]
+   added = yellow
+   changed = green
+   untracked = cyan
+
+[credential]
+	helper = cache --timeout=3600
+
+[help]
+   autocorrect = 1
+
+[alias]
+	st = status --ignore-submodules
+	br = branch
+	ci = commit
+	co = checkout
+   ch = cherry origin -v --abbrev=7
+	c-p = cherry-pick
+	di = diff
+	dt = difftool
+	mt = mergetool
+   l = log --graph --pretty=format:'%C(white)%h%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset'
+   rp = remote prune origin
+   chmod = update-index --chmod=+x
+	da = !sh ~/bin/diffall.sh
+   dtree = diff-tree --no-commit-id --name-status -r 
+   ahead = log --oneline origin..head
+   behind = log --oneline head..origin
+   mergepr = !git push origin origin/`git rev-parse --abbrev-ref HEAD`:develop
+   
+   la = "!git config -l | grep alias | cut -c 7-"
+
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%C(cyan)\\ [%cn]" --decorate
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%C(cyan)\\ [%cn]" --decorate --numstat
+	lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%C(cyan)\\ [%cn]" --decorate --date=short
+	ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%C(cyan)\\ [%cn]" --decorate --date=relative
+	grog = log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
+	
+[rerere]
+	enabled = true
+[winUpdater]
+	recentlySeenVersion = 2.17.0.windows.1
