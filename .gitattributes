@@ -1,0 +1,10 @@
+# Adapted from https://help.github.com/articles/dealing-with-line-endings/
+
+# Default file handling
+* text=auto
+
+# Just unix things
+.gitattributes text eol=lf
+.bashrc text eol=lf
+.gitconfig text eol=lf
+*.sh text eol=lf
