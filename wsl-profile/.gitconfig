@@ -1,0 +1,76 @@
+[user]
+    email = a.cooke@techsmith.com
+	name = Tony Cooke
+[push]
+	default = simple
+[diff]
+    tool = bcomp
+[difftool]
+    prompt = false
+[difftool "bcomp"]
+    cmd = /home/acooke/WSLMerge.sh diff $LOCAL $PWD/$REMOTE
+[merge]
+    tool = bcomp
+[mergetool "bcomp"]
+    trustExitCode = true
+    cmd = /home/acooke/WSLMerge.sh merge $LOCAL $REMOTE $BASE $MERGED
+[core]
+	autocrlf = true
+    editor = code --new-window --wait $(wslpath -w $1)
+	trustctime = false
+	filemode = false
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+    ui = auto
+[color "branch"]
+    current = yellow reverse
+    local = yellow 
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[credential]
+	helper = cache --timeout=3600
+[help]
+   autocorrect = 1
+[alias]
+    la = "!git config -l | grep alias | cut -c 7-"
+
+    st = status --ignore-submodules
+    br = branch
+    ci = commit
+    co = checkout
+    ch = cherry origin -v --abbrev=7
+    c-p = cherry-pick
+    di = diff
+    dt = difftool
+    mt = mergetool
+    l = log --graph --pretty=format:'%C(white)%h%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset'
+    rp = remote prune origin
+    chmod = update-index --chmod=+x
+    da = !sh ~/bin/diffall.sh
+    dtree = diff-tree --no-commit-id --name-status -r 
+    ahead = log --oneline origin..head
+    behind = log --oneline head..origin
+    mergepr = !git push origin origin/`git rev-parse --abbrev-ref HEAD`:develop
+        
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%C(cyan)\\ [%cn]" --decorate
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%C(cyan)\\ [%cn]" --decorate --numstat
+    lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%C(cyan)\\ [%cn]" --decorate --date=short
+    ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%C(cyan)\\ [%cn]" --decorate --date=relative
+    grog = log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
+
+[rerere]
+	enabled = true
+[winUpdater]
+	recentlySeenVersion = 2.17.0.windows.1
+[rebase]
+	autosquash = true
