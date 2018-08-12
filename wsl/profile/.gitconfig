@@ -8,16 +8,15 @@
 [difftool]
     prompt = false
 [difftool "bcomp"]
-    cmd = /home/acooke/WSLMerge.sh diff $LOCAL $PWD/$REMOTE
+    cmd = "/home/acooke/glue/diff.sh" '/mnt/c/Program Files/Beyond Compare 4/BCompare.exe' $LOCAL $PWD/$REMOTE
 [merge]
     tool = bcomp
 [mergetool "bcomp"]
     trustExitCode = true
-    cmd = /home/acooke/WSLMerge.sh merge $LOCAL $REMOTE $BASE $MERGED
+    cmd = '/mnt/c/Program Files/Beyond Compare 4/BCompare.exe' $LOCAL $REMOTE $BASE $MERGED
 [core]
 	autocrlf = true
-    # editor = code --new-window --wait $(wslpath -w $1)
-    editor = "/home/acooke/editor.sh -w -n"
+    editor = "/home/acooke/glue/editor.sh -w -n"
 	trustctime = false
 	filemode = false
 [color]
