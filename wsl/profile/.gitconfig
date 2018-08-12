@@ -16,7 +16,7 @@
     cmd = '/mnt/c/Program Files/Beyond Compare 4/BCompare.exe' $LOCAL $REMOTE $BASE $MERGED
 [core]
     autocrlf = true
-    editor = "/home/acooke/glue/editor.sh -w -n"
+    editor = "~/glue/editor.sh" code -w -n
     trustctime = false
     filemode = false
 [color]
@@ -74,4 +74,3 @@
     recentlySeenVersion = 2.17.0.windows.1
 [rebase]
     autosquash = true
-    

@@ -4,6 +4,8 @@
 # Borrowed from: https://github.com/Microsoft/vscode/issues/27101
 # Note: We're using `wslpath` provided by WSL as of the most recent Win10 update.
 
+echo "@: $@"
+
 #extract last argument (the file path)
 for last; do true; done
 
@@ -11,4 +13,4 @@ for last; do true; done
 all="${@:1:$(($#-1))}"
 
 #launch code with windows path
-code $all `wslpath -w $last`
+$all `wslpath -w $last`
