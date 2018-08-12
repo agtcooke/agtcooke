@@ -15,10 +15,10 @@
     trustExitCode = true
     cmd = '/mnt/c/Program Files/Beyond Compare 4/BCompare.exe' $LOCAL $REMOTE $BASE $MERGED
 [core]
-	autocrlf = true
+    autocrlf = true
     editor = "/home/acooke/glue/editor.sh -w -n"
-	trustctime = false
-	filemode = false
+    trustctime = false
+    filemode = false
 [color]
     branch = auto
     diff = auto
@@ -38,9 +38,9 @@
     changed = green
     untracked = cyan
 [credential]
-	helper = cache --timeout=3600
+    helper = cache --timeout=3600
 [help]
-   autocorrect = 1
+    autocorrect = 1
 [alias]
     la = "!git config -l | grep alias | cut -c 7-"
 
@@ -69,8 +69,9 @@
     grog = log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
 
 [rerere]
-	enabled = true
+    enabled = true
 [winUpdater]
-	recentlySeenVersion = 2.17.0.windows.1
+    recentlySeenVersion = 2.17.0.windows.1
 [rebase]
-	autosquash = true
+    autosquash = true
+    
