@@ -1,3 +1,5 @@
-# AGTCooke
+# agtcooke
 
-Just a collection of files and stuff that's useful to me.
+:wave: Welcome to my repo.
+
+Not much going on here, except [WSL](wsl), which you might find useful.
