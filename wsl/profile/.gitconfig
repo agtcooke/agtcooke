@@ -1,8 +1,8 @@
 [user]
     email = a.cooke@techsmith.com
-	name = Tony Cooke
+    name = Tony Cooke
 [push]
-	default = simple
+    default = simple
 [diff]
     tool = bcomp
 [difftool]
