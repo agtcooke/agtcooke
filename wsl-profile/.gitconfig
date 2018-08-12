@@ -16,7 +16,8 @@
     cmd = /home/acooke/WSLMerge.sh merge $LOCAL $REMOTE $BASE $MERGED
 [core]
 	autocrlf = true
-    editor = code --new-window --wait $(wslpath -w $1)
+    # editor = code --new-window --wait $(wslpath -w $1)
+    editor = "/home/acooke/editor.sh -w -n"
 	trustctime = false
 	filemode = false
 [color]
