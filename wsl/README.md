@@ -4,6 +4,10 @@ Things I need for WSL to be functional for my workflows.
 
 I think most of these things can be reduced, but for the time being, this meets my needs.
 
+## Using a VPN with WSL
+
+There are [known](https://github.com/Microsoft/WSL/issues/1350) [issues](https://github.com/Microsoft/WSL/issues/416) using a VPN with WSL. [This is the best solution I've found](https://gist.github.com/matthiassb/9c8162d2564777a70e3ae3cbee7d2e95).
+
 ## `/profile`
 
 Basically my dotfiles so far.
