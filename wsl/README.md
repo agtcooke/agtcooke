@@ -24,6 +24,10 @@ Helpers to live in a WSL<->Windows world.
 
 `editor.sh` separates all parameters (`$@`) from the last parameter (the thing to edit), `wslpath`'s the last parameter, and carries on.
 
+## `ConEmu.xml`
+
+My config file for `Cmder`. As of right now it needs to be manually copied to %APPDATA%.
+
 ## `setup.sh`
 
 A maybe pointless attempt at automating setup of these things.
