@@ -206,3 +206,6 @@ if [ -f "${SSH_ENV}" ]; then
 else
     start_agent;
 fi
+
+source <(kubectl completion bash)
+export DOCKER_HOST=tcp://localhost:2375
