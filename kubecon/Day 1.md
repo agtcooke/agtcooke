@@ -3,71 +3,80 @@
 * Weaveworks => gitops. not vendor specific
 * CEO chair of tech oversight committee CNCF
 * Slides: http://tinyurl.com/production-k8s-2018
-* The magic sauce: https://github.com/weaveworks/flux
+* [WeaveWorks Flux](https://github.com/weaveworks/flux)
+* [WeaveWorks Scope](https://github.com/weaveworks/scope)
 
-## Legend
+## TLDR
 
-* `[w]` => work item
-* `[f]` => future topic
+* both application and cluster level operations have broad bases to cover
+* treat CI and CD as completely separate animals
+  * CI produces images
+  * CD is highly automated
+    * k8s configuration lives in (its own) repo
+    * the cluster monitors its config repo for changes and reacts autonomously
+* lots here to improve upon based on current state
 
 ## Top level to-do
 
-* `[w]` make tracking spreadsheet for all these things
-* `[ ]` consider seperate list/sheet for CI maturity
-* `[ ]` Full divorce of CI from CD
-* `[ ]` solicit help during IP time (higher priority/impact guided)
-* `[w]` work with group to prioritize
-* `[ ]` what to do about AI vs OSS / industry standard tools?
-* `[ ]` create the sales for why GitOps
-* `[ ]` create a test cluster for flux driven clusters
+* make tracking spreadsheet for all these things
+* solicit help during IP time (higher priority/impact guided)
+* work with group to prioritize
+* consider seperate list/sheet for CI maturity
+* consider divorce of CI from CD
+* what to do about AI vs OSS / industry standard tools?
+  * good topic for later? we have bigger needs
+* create the sales pitch for why GitOps
+  * huge change
+  * will feel expensive
+* create a test cluster for flux driven clusters
 
 ## Application Checklist
 
 Use slides to feed this section into a spreadsheet.
 
-* `[w]` Liveness (dead, restart)
-* `[w]` Readiness (load)
-* `[w]` cluster dashboard
-* `[f]` playbooks/runbooks
-* `[f]` limits/requests (how the scheduler makes decisions)
-* `[ ]` labels/annotations
-* `[ ]` alerts
-* `[w]` structured logging
-   * `[ ]` stdout/console for .net apps?
-* `[ ]` tracing (dependency tracking)
-   * `[f]` ingress controlled tracing
-   * `[ ]` tracing header
-* `[ ]` gracefull shutdowns
-   * `[ ]` exponential backoff for readiness / dependencies
-* [w] configmaps
-   * `[ ]` mounted?
-   * `[ ]` external to deployment
-   * `[ ]` dynamic configuration
-   * `[ ]` file watch or polling
-   * `[ ]` filewatch leads to not needing to restart the pod
-* `[w]` labels using commit branch/sha
-   * `[ ]` map running => code
-* `[ ]` locked down runtime and context
-   * `[ ]` possible punt to SWG / security teanm
+* Liveness (dead, restart)
+* Readiness (load)
+* cluster dashboard
+* playbooks/runbooks
+* limits/requests (how the scheduler makes decisions)
+* labels/annotations
+* alerts
+* structured logging
+  * stdout/console for .net apps?
+* tracing (dependency tracking)
+  * ingress controlled tracing
+  * tracing header
+* gracefull shutdowns
+  * exponential backoff for readiness / dependencies
+* configmaps
+  * mounted?
+  * external to deployment
+  * dynamic configuration
+  * file watch or polling
+  * filewatch leads to not needing to restart the pod
+* labels using commit branch/sha
+  * map running => code
+* locked down runtime and context
+  * possible punt to SWG / security teanm
 
 ## Cluster Checklist
 
-* `[ ]` build pipeline
-* `[ ]` deploy pipeline => devops
-* `[x]` image registry
-* `[ ]` monitoring infra
-* `[ ]` secret management
-* `[ ]` ingress controller
-* `[ ]` api gateway
+* build pipeline
+* deploy pipeline => devops
+* image registry
+* monitoring infra
+* secret management
+* ingress controller
+* api gateway
    * ingress:connection, gateway:request
    * why are we rolling our own?
-* `[ ]` service mesh
-  *  `[ ]` tracing w/o instrumentation
-  *  `[ ]` linkerd/istio
-  *  `[ ]` how does AI fit in?
-* `[ ]` service catalog / broker
-* `[w]` image scanning
-  * `[ ]` possible to punt to SWG / security team
+* service mesh
+  * tracing w/o instrumentation
+  * linkerd/istio
+  * how does AI fit in?
+* service catalog / broker
+* image scanning
+  * possible to punt to SWG / security team
 * advanced deployment strategies (canary)
 
 ## etc
