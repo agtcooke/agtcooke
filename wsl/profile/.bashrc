@@ -209,3 +209,5 @@ fi
 
 source <(kubectl completion bash)
 export DOCKER_HOST=tcp://localhost:2375
+export PATH=$PATH:$HOME/.linkerd2/bin
+alias chrome='/mnt/c/Windows/System32/cmd.exe /c "c:\Program Files (x86)\Google\Chrome\Application\chrome.exe"'
