@@ -22,8 +22,6 @@ Helpers to live in a WSL<->Windows world.
 
 `diff.sh` shuffles the git diff temp file over to Windows at `C:\temp`, and then proceeds with the diff. WSL is opinionated about not letting Windows edit files that live in WSL (`wslpath`, for example, refuses to map the path, without explicit explanation), so we need do some shuffling.
 
-`editor.sh` separates all parameters (`$@`) from the last parameter (the thing to edit), `wslpath`'s the last parameter, and carries on.
-
 ## `ConEmu.xml`
 
 My config file for `Cmder`. As of right now it needs to be manually copied to %APPDATA%.
